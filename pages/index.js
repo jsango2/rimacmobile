@@ -11,7 +11,7 @@ const LottieControl = () => {
   let length = 0;
 
   React.useEffect(() => {
-    var animDuration = 15000;
+    var animDuration = 20000;
     const anim = lottie.loadAnimation({
       container: lottieRef.current,
       loop: false,
@@ -20,7 +20,6 @@ const LottieControl = () => {
     });
     function animatebodymovin(duration) {
       let scrollPosition = window.scrollY;
-      console.log("scroll", scrollPosition);
       // if (scrollPosition >= 169300) {
       //   window.scrollTo({
       //     top: 0,
@@ -31,6 +30,9 @@ const LottieControl = () => {
       const maxFrames = anim.totalFrames;
       // const frame = (maxFrames / 1) * ((scrollPosition/1000) / (duration *10));
       const frame = (maxFrames / 1) * (scrollPosition / 10 / duration);
+      console.log("Frame", frame);
+      console.log("maxframes", maxFrames);
+
       if (frame > maxFrames) {
         window.scrollTo({
           top: 0,
