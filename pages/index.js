@@ -11,7 +11,7 @@ const LottieControl = () => {
   let length = 0;
 
   React.useEffect(() => {
-    var animDuration = 20000;
+    var animDuration = 10000;
     const anim = lottie.loadAnimation({
       container: lottieRef.current,
       loop: false,
